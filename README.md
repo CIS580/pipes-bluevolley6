@@ -46,6 +46,18 @@ The bundle will automatically be re-created every time you change a source file.
 ## Credits
 Pipe tiles by Naarshakta, and released into the public domain on [OpenGameArt.com](http://opengameart.org/content/puzze-pipe-set)
 
-Background create by Katie Kristiansen in Paint
+Background created by Katie Kristiansen in Paint
+
+happy.mp3 by rezoner, and released into the public domain on
+[OpenGameArt.com](http://opengameart.org/content/happy-arcade-tune)
+
+lose sound2 - 1_0.wav by remaxim, and released into the public domain on
+[OpenGameArt.com](http://opengameart.org/content/bad-sound-2)
+
+key2 pickup.wav by Vinrax, and released into the public domain on
+[OpenGameArt.com](http://opengameart.org/content/key-pickup-2)
+
+Picked Coin Echo 2.wav by NenadSimic, and released into the public domain on
+[OpenGameArt.com](http://opengameart.org/content/picked-coin-echo-2)
 
 Game framework HTML5/CSS3/Javascirpt code was written by course instructor [Nathan Bean](http://nathanhbean.com), and also released under the [CC-A-SA 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)

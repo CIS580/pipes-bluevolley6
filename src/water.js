@@ -3,7 +3,6 @@
  */
 module.exports = exports = Water;
 
-
 /**
  * @constructor Water
  * Creates a new water object

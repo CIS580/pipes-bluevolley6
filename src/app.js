@@ -12,6 +12,15 @@ var score = 0;
 var previous = 'left';
 var board = [];
 var gameTime = 0;
+var win = new Audio();
+win.src = 'Picked Coin Echo 2.wav';
+var metal = new Audio();
+metal.src = 'key2 pickup.wav';
+var gameOver = new Audio();
+gameOver.src = 'lose_sound_2-1_0.wav';
+var music = new Audio();
+music.src = 'happy.mp3';
+music.play();
 for (var i = 0; i < 10; i++) {
   board[i] = [];
 }
@@ -63,6 +72,7 @@ canvas.addEventListener('contextmenu', function(event) {
       for(var i = 0; i < placed.length; i++) {
         if(x == (placed[i].y / 64) && y == (placed[i].x / 64)) {
           if(placed[i].state == 'Empty') {
+            metal.play();
             if(placed[i].index == 3) {
               placed[i].index = 0;
             } else if(placed[i].index == 4) {
@@ -117,6 +127,7 @@ canvas.onclick = function(event) {
         pipes[0].x = event.offsetX - event.offsetX % 64;
         pipes[0].y = event.offsetY - event.offsetY % 64;
         placed.push(pipes[0]);
+        metal.play();
         pipes.splice(0,1);
         pipes[0].y = 385;
         for(var i = 1; i < 4; i++) {
@@ -169,6 +180,7 @@ function update(elapsedTime) {
         console.log('true');
         if (currentx == placed[1].x && currenty == placed[1].y) {
           //finished level
+          win.play();
           gameLevel++;
           score += 100;
           placed.splice(0, placed.length);
@@ -203,7 +215,7 @@ function update(elapsedTime) {
                 previous = placed[i].previous;
                 if(placed[i].water.position == 10) {
                   if(previous == 'left') {
-                    if((currentx + 64) > 768) {
+                    if((currentx + 64) > 704) {
                       game.over = true;
                     } else {
                       currentx += 64;
@@ -215,7 +227,7 @@ function update(elapsedTime) {
                       currentx -= 64;
                     }
                   } else if(previous == 'top') {
-                    if((currenty + 64) > 768) {
+                    if((currenty + 64) > 576) {
                       game.over = true;
                     } else {
                       currenty += 64;
@@ -272,5 +284,7 @@ function render(elapsedTime, ctx) {
       ctx.fillStyle = "red";
       ctx.font = "bold 32px Arial";
       ctx.fillText("Game Over", 768/2 - 90, 640/2);
+      music.pause();
+      gameOver.play();
   }
 }
