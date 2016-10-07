@@ -15,6 +15,7 @@ module.exports = exports = Game;
 function Game(screen, updateFunction, renderFunction) {
   this.update = updateFunction;
   this.render = renderFunction;
+  this.over = false;
 
   // Set up buffers
   this.frontBuffer = screen;
@@ -47,10 +48,11 @@ Game.prototype.loop = function(newTime) {
   var game = this;
   var elapsedTime = newTime - this.oldTime;
   this.oldTime = newTime;
+  if(!game.over) {
+    if(!this.paused) this.update(elapsedTime);
+    this.render(elapsedTime, this.frontCtx);
 
-  if(!this.paused) this.update(elapsedTime);
-  this.render(elapsedTime, this.frontCtx);
-
-  // Flip the back buffer
-  this.frontCtx.drawImage(this.backBuffer, 0, 0);
+    // Flip the back buffer
+    this.frontCtx.drawImage(this.backBuffer, 0, 0);
+  }
 }

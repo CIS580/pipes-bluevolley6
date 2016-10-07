@@ -44,6 +44,8 @@ Then run the command:
 The bundle will automatically be re-created every time you change a source file.  However, you still need to refresh your browser for the changed bundle to take effect.
 
 ## Credits
-Pipe tiles by surt, and released into the public domain on [OpenGameArt.com](http://opengameart.org/content/plums)
+Pipe tiles by Naarshakta, and released into the public domain on [OpenGameArt.com](http://opengameart.org/content/puzze-pipe-set)
+
+Background create by Katie Kristiansen in Paint
 
 Game framework HTML5/CSS3/Javascirpt code was written by course instructor [Nathan Bean](http://nathanhbean.com), and also released under the [CC-A-SA 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)
